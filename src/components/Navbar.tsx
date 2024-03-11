@@ -8,7 +8,10 @@ function Navbar() {
     <div className="flex  justify-items-center px-24 z-10  py-4  items-center gap-2 ">
       <div className="font-bold mr-auto flex-1 text-lg">BibleApp</div>
       <Link href="/bibleread">Bible</Link>
-      <Input placeholder="Search..." className="max-w-[750px]" />
+      <Input
+        placeholder="Search..."
+        className="max-w-[750px] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
+      />
 
       <div className="gap-2 flex flex-1 items-center justify-center">
         <Button variant="outline" className="ml-auto ">
