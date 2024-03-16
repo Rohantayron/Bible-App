@@ -1,5 +1,6 @@
+import Verse from "@/components/Verse";
 import React from "react";
-import Verse from "../../components/verse";
+
 function page() {
   return (
     <div>
