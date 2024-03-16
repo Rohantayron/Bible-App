@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
-function Hero() {
+function Hero(props: { text: string; nmr: number }) {
   return (
     <main className="grid  place-items-center relative  pt-16 pb-8 md:pt-12 md:pb-24">
       <Image
@@ -20,12 +20,8 @@ function Hero() {
           The definitive Bible app made for{" "}
           <span className="text-foreground-primary">Everyone.</span>
         </h1>
-        <p className="text-lg mt-4 text-slate-600 max-w-xl">
-          Astroship is a starter template for startups, marketuuing websites &
-          landing pages.
-          <wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-          any website with this starter.
-        </p>
+        <p className="text-lg mt-4 text-slate-600 max-w-xl">"{props.text}"</p>
+        <div>-John 3:{props.nmr}</div>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <Link
             href="#"
