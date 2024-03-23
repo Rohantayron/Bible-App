@@ -1,6 +1,7 @@
 import React from "react";
 import TextParag from "@/components/TextParag";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PageButtons from "@/components/PageButtons";
 
 async function getChapter(params: { chapter: number; book: string }) {
   const res = await fetch(
@@ -27,9 +28,16 @@ export default async function page({
   const chaptertext = chapter.data.map(
     (verseandtext: { text: string; verse: number }) => {
       console.log(verseandtext);
-      return <TextParag nmr={verseandtext.verse} text={verseandtext.text} />;
+      return (
+        <TextParag
+          key={verseandtext.text}
+          nmr={verseandtext.verse}
+          text={verseandtext.text}
+        />
+      );
     }
   );
+
   return (
     <div className="relative">
       <div className="flex flex-col justify-center py-16 items-center">
@@ -40,14 +48,9 @@ export default async function page({
         </div>
       </div>
 
-      <button className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl">
-        {" "}
-        <ChevronLeft />
-      </button>
-      <button className=" p-6 rounded-full  right-32 top-1/4 absolute border text-xl">
-        {" "}
-        <ChevronRight />
-      </button>
+      <div className="w-[90vw] flex sticky bottom-[35%] z-1 justify-between max-w-[1400px]  mx-auto">
+        <PageButtons />
+      </div>
     </div>
   );
 }
