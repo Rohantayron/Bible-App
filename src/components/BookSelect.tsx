@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   Command,
   CommandDialog,
@@ -23,10 +24,18 @@ import {
 function BookSelect() {
   console.log(OLDTESTAMENT);
   const books = OLDTESTAMENT.map((book) => {
-    return <CommandItem>{book.name}</CommandItem>;
+    return (
+      <Link href={`/bible/read/${book.name.toLowerCase()}/1`}>
+        <CommandItem>{book.name}</CommandItem>
+      </Link>
+    );
   });
   const books2 = NEWTESTAMENT.map((book) => {
-    return <CommandItem>{book.name}</CommandItem>;
+    return (
+      <Link href={`/bible/read/${book.name.toLowerCase()}/1`}>
+        <CommandItem>{book.name}</CommandItem>
+      </Link>
+    );
   });
   return (
     <Popover>
@@ -38,10 +47,7 @@ function BookSelect() {
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Old Testament">{books}</CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="New Testament">
-              <link></link>
-              {books2}
-            </CommandGroup>
+            <CommandGroup heading="New Testament">{books2}</CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>
