@@ -12,6 +12,8 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 
+import { OLDTESTAMENT, NEWTESTAMENT } from "../BibleArray";
+
 import {
   Popover,
   PopoverContent,
@@ -19,6 +21,13 @@ import {
 } from "@/components/ui/popover";
 
 function BookSelect() {
+  console.log(OLDTESTAMENT);
+  const books = OLDTESTAMENT.map((book) => {
+    return <CommandItem>{book.name}</CommandItem>;
+  });
+  const books2 = NEWTESTAMENT.map((book) => {
+    return <CommandItem>{book.name}</CommandItem>;
+  });
   return (
     <Popover>
       <PopoverTrigger>Open</PopoverTrigger>
@@ -27,16 +36,11 @@ function BookSelect() {
           <CommandInput placeholder="Type a command or search..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Old Testament">
-              <CommandItem>Genesis</CommandItem>
-              <CommandItem>Search Emoji</CommandItem>
-              <CommandItem>Calculator</CommandItem>
-            </CommandGroup>
+            <CommandGroup heading="Old Testament">{books}</CommandGroup>
             <CommandSeparator />
             <CommandGroup heading="New Testament">
-              <CommandItem>Profile</CommandItem>
-              <CommandItem>Billing</CommandItem>
-              <CommandItem>Settings</CommandItem>
+              <link></link>
+              {books2}
             </CommandGroup>
           </CommandList>
         </Command>
