@@ -13,7 +13,10 @@ export default async function page({
   return (
     <div className="relative">
       <div className="flex flex-col justify-center py-16 items-center">
-        <h1 className="text-3xl font-bold py-6 ">Chapter Title</h1>
+        <h1 className="text-3xl font-bold py-6 ">
+          {params.book.charAt(0).toUpperCase() + params.book.slice(1)}{" "}
+          {params.chapter}
+        </h1>
 
         <div className="text-2xl max-w-[600px] w-full leading-relaxed ">
           <Suspense fallback={<PageTextSkeleton />}>

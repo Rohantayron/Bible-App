@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
       {/* component */}
-      <div className="w-full min-h-screen z-20 flex items-center justify-center bg-muted">
+      <div className="w-full min-h-screen z-40 flex items-center justify-center bg-muted">
         <div className="md:w-2/3 w-full px-4 text-foreground flex flex-col">
           <div className="w-full text-7xl font-bold">
             <h1 className="w-full md:w-2/3">
