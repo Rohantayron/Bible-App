@@ -1,7 +1,5 @@
 "use client";
-"use client";
 
-import { ComboboxDemo } from "@/components/Command";
 import React from "react";
 
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -20,10 +18,4 @@ async function getData() {
   }
 
   return res.json();
-}
-
-export default async function ComboboxDemo() {
-  const data = await getData();
-  console.log(data);
-  return <BookSelect />;
 }
