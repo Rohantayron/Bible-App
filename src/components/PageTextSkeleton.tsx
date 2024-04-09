@@ -3,7 +3,7 @@ import React from "react";
 function PageTextSkeleton() {
   const skeletonArray = Array(40).fill("");
 
-  console.log(skeletonArray);
+  console.log(skeletonArray, "this is that goated constant");
   return (
     <div className="flex flex-col w-full gap-4 mt-4">
       {skeletonArray.map((item, index) => {

@@ -22,7 +22,7 @@ async function PageText({
     chapter: params.chapter,
     book: params.book,
   });
-  console.log(chapter);
+
   const chaptertext = chapter.data.map(
     (verseandtext: { text: string; verse: number }) => {
       console.log(verseandtext);
