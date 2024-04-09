@@ -99,3 +99,5 @@ export const NEWTESTAMENT = [
   { name: "Jude", chapters: Array.from({ length: 1 }, (_, i) => i + 1) },
   { name: "Revelation", chapters: Array.from({ length: 22 }, (_, i) => i + 1) },
 ];
+
+export const FULLBIBLE = [...OLDTESTAMENT, ...NEWTESTAMENT];
