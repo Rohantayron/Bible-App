@@ -8,6 +8,7 @@ function PageButtons() {
   const params = useParams<{ book: string; chapter: string }>();
   const router = useRouter();
 
+  //code for decreasing
   function buttonDecrement() {
     if (parseInt(params.chapter) <= 1) {
       return;
@@ -20,16 +21,18 @@ function PageButtons() {
     );
   }
 
-  function getChapterFromStaticArray() {
+  function getBookFromStaticArray() {
     return FULLBIBLE.find((obj) => obj.name.toLowerCase() === params.book);
   }
 
+  //code for increasing
   function buttonIncrement() {
     if (
-      parseInt(params.chapter) === getChapterFromStaticArray()?.chapters.length
+      parseInt(params.chapter) === getBookFromStaticArray()?.chapters.length
     ) {
       return;
     }
+    
     router.replace(
       `/bible/read/${params.book}/${parseInt(params.chapter) + 1}`
     );
