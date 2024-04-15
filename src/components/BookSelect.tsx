@@ -25,7 +25,9 @@ function BookSelect() {
   const books = OLDTESTAMENT.map((book) => {
     return (
       <Link key={book.name} href={`/bible/read/${book.name.toLowerCase()}/1`}>
-        <CommandItem>{book.name}</CommandItem>
+        <CommandItem className="text-[18px]  data-[disabled]:opacity-100  aria-selected:bg-transparent aria-selected:text-black">
+          {book.name}
+        </CommandItem>
       </Link>
     );
   });
@@ -33,21 +35,35 @@ function BookSelect() {
   const books2 = NEWTESTAMENT.map((book) => {
     return (
       <Link key={book.name} href={`/bible/read/${book.name.toLowerCase()}/1`}>
-        <CommandItem>{book.name}</CommandItem>
+        <CommandItem className="text-[18px] data-[disabled]:opacity-100 ">
+          {book.name}
+        </CommandItem>
       </Link>
     );
   });
   return (
     <Popover>
-      <PopoverTrigger>Open</PopoverTrigger>
-      <PopoverContent>
-        <Command>
-          <CommandInput placeholder="Type a command or search..." />
-          <CommandList>
+      <PopoverTrigger className=" ml-[50%] border-b-2 w-16 text-xl ">
+        Books
+      </PopoverTrigger>
+      <PopoverContent className="w-[500px] h-[500px] ">
+        <Command className="">
+          <CommandInput placeholder="Search..." />
+          <CommandList className="max-h-full">
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Old Testament">{books}</CommandGroup>
+            <CommandGroup
+              heading="Old Testament"
+              className="[&_[cmdk-group-heading]]:text-[18px] "
+            >
+              {books}
+            </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="New Testament">{books2}</CommandGroup>
+            <CommandGroup
+              heading="New Testament"
+              className="[&_[cmdk-group-heading]]:text-[18px]"
+            >
+              {books2}
+            </CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>
