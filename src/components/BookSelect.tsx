@@ -22,7 +22,6 @@ import {
 } from "@/components/ui/popover";
 
 function BookSelect() {
-  console.log(OLDTESTAMENT);
   const books = OLDTESTAMENT.map((book) => {
     return (
       <Link href={`/bible/read/${book.name.toLowerCase()}/1`}>
