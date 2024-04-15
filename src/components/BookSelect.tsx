@@ -24,14 +24,14 @@ import {
 function BookSelect() {
   const books = OLDTESTAMENT.map((book) => {
     return (
-      <Link href={`/bible/read/${book.name.toLowerCase()}/1`}>
+      <Link key={book.name} href={`/bible/read/${book.name.toLowerCase()}/1`}>
         <CommandItem>{book.name}</CommandItem>
       </Link>
     );
   });
   const books2 = NEWTESTAMENT.map((book) => {
     return (
-      <Link href={`/bible/read/${book.name.toLowerCase()}/1`}>
+      <Link key={book.name} href={`/bible/read/${book.name.toLowerCase()}/1`}>
         <CommandItem>{book.name}</CommandItem>
       </Link>
     );
