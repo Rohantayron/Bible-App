@@ -29,6 +29,7 @@ function BookSelect() {
       </Link>
     );
   });
+  // nigg
   const books2 = NEWTESTAMENT.map((book) => {
     return (
       <Link key={book.name} href={`/bible/read/${book.name.toLowerCase()}/1`}>
