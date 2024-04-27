@@ -8,6 +8,8 @@ function Page() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  
+
   return (
     <div className="flex items-center flex-col justify-center">
       <div>

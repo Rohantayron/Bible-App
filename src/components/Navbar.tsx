@@ -7,21 +7,17 @@ import NavbarSearch from "./NavbarSearch";
 function Navbar() {
   return (
     <div className="flex  justify-items-center px-24 z-10  py-4  items-center gap-2 ">
-      <div className="font-bold mr-auto flex-1 text-lg">BibleApp</div>
-      <Link href="/bible/read">Bible</Link>
+      <Link href={"/"} className="font-bold mr-auto flex-1 text-lg">
+        BibleApp
+      </Link>
 
-      <Suspense fallback={<NavbarSearchFallback />}>
+      {/* <Suspense fallback={<NavbarSearchFallback />}>
         <NavbarSearch />
-      </Suspense>
+      </Suspense> */}
 
-      <div className="gap-2 flex flex-1 items-center justify-center">
-        <Button variant="outline" className="ml-auto ">
-          Log In
-        </Button>
-        <Button variant="outline" className="">
-          Sign In
-        </Button>
-      </div>
+      <Link href={"bible/read/genesis/1"}>
+        <Button className="ml-auto ">Read the Bible</Button>
+      </Link>
     </div>
   );
 }
