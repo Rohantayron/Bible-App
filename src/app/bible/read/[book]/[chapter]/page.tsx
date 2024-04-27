@@ -12,9 +12,9 @@ export default async function page({
   params: { chapter: number; book: string };
 }) {
   return (
-    <div className="relative">
+    <div className="relative py-16">
       <BookSelect />
-      <div className="flex flex-col justify-center py-16 items-center">
+      <div className="flex flex-col justify-center  items-center">
         <h1 className="text-3xl font-bold py-6 ">
           {params.book.charAt(0).toUpperCase() + params.book.slice(1)}{" "}
           {params.chapter}

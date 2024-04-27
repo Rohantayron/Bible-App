@@ -6,7 +6,7 @@ import NavbarSearch from "./NavbarSearch";
 
 function Navbar() {
   return (
-    <div className="flex  justify-items-center px-24 z-10  py-4  items-center gap-2 ">
+    <div className="flex border-b sticky top-0 left-0  bg-background justify-items-center px-24 z-10  py-4  items-center gap-2 ">
       <Link href={"/"} className="font-bold mr-auto flex-1 text-lg">
         BibleApp
       </Link>
