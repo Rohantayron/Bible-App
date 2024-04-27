@@ -15,7 +15,7 @@ function Navbar() {
         <NavbarSearch />
       </Suspense> */}
 
-      <Link href={"bible/read/genesis/1"}>
+      <Link href={"/bible/read/genesis/1"}>
         <Button className="ml-auto ">Read the Bible</Button>
       </Link>
     </div>
