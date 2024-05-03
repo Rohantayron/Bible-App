@@ -25,7 +25,6 @@ async function PageText({
 
   const chaptertext = chapter.data.map(
     (verseandtext: { text: string; verse: number }) => {
-      console.log(verseandtext);
       return (
         <TextParag
           key={verseandtext.text}

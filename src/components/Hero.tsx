@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Download, Github } from "lucide-react";
+import { ChevronRight, Download, Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
@@ -25,23 +25,28 @@ function Hero(props: { text: string; nmr: number }) {
         <p className="text-lg mt-4 text-slate-600 max-w-xl">"{props.text}"</p>
         <div>-John 3:{props.nmr}</div>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <Link
-            href="#"
-            target="_blank"
-            className="flex gap-1 items-center justify-center"
-            rel="noopener"
-          >
-            <Download />
-            Download for Free
-          </Link>
-
-          <Link href={"#"} rel="noopener" target="_blank">
+          <Link href={"/bible/read/genesis/1"}>
             <Button
               size="lg"
               className="flex gap-1 items-center justify-center"
             >
+              <ChevronRight />
+              Continue
+            </Button>
+          </Link>
+
+          <Link
+            href="https://github.com/rohantayron/bible-app"
+            target="_blank"
+            rel="noopener"
+          >
+            <Button
+              variant={"link"}
+              size={"lg"}
+              className="flex gap-1 items-center justify-center"
+            >
               <Github />
-              GitHub Repo
+              Github repo
             </Button>
           </Link>
         </div>
