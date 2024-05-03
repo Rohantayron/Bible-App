@@ -1,7 +1,7 @@
 import React from "react";
 import TextParag from "./TextParag";
 
-async function getChapter(params: { chapter: number; book: string }) {
+export async function getChapter(params: { chapter: number; book: string }) {
   const res = await fetch(
     `https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/en-asv/books/${params.book}/chapters/${params.chapter}.json`
   );

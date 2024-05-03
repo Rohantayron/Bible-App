@@ -7,15 +7,16 @@ import Image from "next/image";
 
 function Hero(props: { text: string; nmr: number }) {
   return (
-    <main className="grid  place-items-center relative  pt-16 pb-8 md:pt-12 md:pb-24">
+    <div className="grid  place-items-center   relative  pt-16 pb-8 md:pt-12 md:pb-24">
       <Image
         alt="a"
         src={"/cross.png"}
-        className=" -top-0 opacity-30 absolute z-0 "
+        className=" -top-0 opacity-30 py-4 absolute z-0 "
         width={700}
         height={1400}
         priority
       />
+
       <div className="text-center justify-center z-10 items-center flex flex-col ">
         <h1 className="text-5xl lg:text-7xl  xl:text-8xl xl:max-w-screen-lg mt-24 font-bold lg:tracking-tight xl:tracking-tighter">
           The definitive Bible app made for{" "}
@@ -45,7 +46,7 @@ function Hero(props: { text: string; nmr: number }) {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

@@ -19,7 +19,7 @@ export default async function Home() {
   const data = await getData();
 
   return (
-    <main className="flex a min-h-screen flex-col ">
+    <main className="flex overflow-y-hidden min-h-screen flex-col ">
       <Hero nmr={data.verse} text={data.text} />
     </main>
   );
