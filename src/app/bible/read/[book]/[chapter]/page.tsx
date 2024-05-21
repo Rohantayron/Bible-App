@@ -2,15 +2,27 @@ import React, { Suspense } from "react";
 import TextParag from "@/components/TextParag";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import PageButtons from "@/components/PageButtons";
-import PageText from "@/components/PageText";
+import PageText, { getChapter } from "@/components/PageText";
 import PageTextSkeleton from "@/components/PageTextSkeleton";
 import BookSelect from "@/components/BookSelect";
+import { getBook } from "@/lib/utils";
+import { FULLBIBLE } from "@/BibleArray";
+
+export async function generateStaticParams() {
+  return FULLBIBLE.map((book) =>
+    book.chapters.map((chapter) => {
+      return { chapter: chapter, book: book.name };
+    })
+  );
+}
 
 export default async function page({
   params,
 }: {
   params: { chapter: number; book: string };
 }) {
+  const { book, chapter } = params;
+
   return (
     <div className="relative py-16">
       <BookSelect />
