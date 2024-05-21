@@ -6,18 +6,36 @@ import NavbarSearch from "./NavbarSearch";
 
 function Navbar() {
   return (
-    <div className="flex border-b sticky top-0 left-0  bg-background justify-items-center px-24 z-10  py-4  items-center gap-2 ">
-      <Link href={"/"} className="font-bold mr-auto flex-1 text-lg">
-        BibleApp
+    <div className="flex flex-row border-b sticky top-0 left-0  bg-background justify-items-center px-24 z-10  py-4  items-center gap-2 justify-around ">
+      <div className="font-bold text-xl font-sans">BibleApp</div>
+      <Link
+        href={"/"}
+        className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
+      >
+        Home
       </Link>
-
-      {/* <Suspense fallback={<NavbarSearchFallback />}>
+      <Link
+        href={"/bible/read/genesis/1"}
+        className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
+      >
+        Read Genesis
+      </Link>
+      <Link
+        href={"/bible/read/john/1"}
+        className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
+      >
+        Read a gospel
+      </Link>
+      <Link
+        href={"/bible/read/psalms/1"}
+        className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
+      >
+        Read a psalm
+      </Link>
+      <hr className="border-gray-600" />
+      <Suspense fallback={<NavbarSearchFallback />}>
         <NavbarSearch />
-      </Suspense> */}
-
-      <Link href={"bible/read/genesis/1"}>
-        <Button className="ml-auto ">Read the Bible</Button>
-      </Link>
+      </Suspense>
     </div>
   );
 }
