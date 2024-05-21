@@ -8,7 +8,6 @@ import Link from "next/link";
 
 function PageButtons() {
   const params = useParams<{ book: string; chapter: string }>();
-  const router = useRouter();
 
   //code for decreasing
   function ButtonDecrementLink({ children }: { children: ReactNode }) {
@@ -67,6 +66,7 @@ function PageButtons() {
       <ButtonDecrementLink>
         <ChevronLeft />
       </ButtonDecrementLink>
+
       <ButtonIncrementLink>
         {" "}
         <ChevronRight />

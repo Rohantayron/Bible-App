@@ -1,3 +1,4 @@
-1.Improve UI
-2.Add videos page
-3.Add highlight feature
+1. Improve UI
+2. make pages with numbers work
+3. Add videos page
+4. Add highlight feature
