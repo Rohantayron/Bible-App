@@ -20,6 +20,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 function BookSelect() {
   const books = OLDTESTAMENT.map((book) => {
@@ -45,10 +47,14 @@ function BookSelect() {
     <Popover>
       <div className="flex items-center justify-center w-full ">
         {" "}
-        <PopoverTrigger className=" border-b-2 w-16 text-xl ">
-          Books
+        <PopoverTrigger asChild className="  ">
+          <Button size={"lg"} className="text-base">
+            Books
+          </Button>
         </PopoverTrigger>
       </div>
+
+      <Separator className="w-[600px] mx-auto my-8" />
 
       <PopoverContent className="w-[500px] h-[500px] ">
         <Command className="">

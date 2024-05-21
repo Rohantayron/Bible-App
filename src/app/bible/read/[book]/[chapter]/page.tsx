@@ -27,7 +27,7 @@ export default async function page({
     <div className="relative py-16">
       <BookSelect />
       <div className="flex flex-col justify-center  items-center">
-        <h1 className="text-3xl font-bold py-6 ">
+        <h1 className="text-3xl font-bold pb-6 ">
           {params.book.charAt(0).toUpperCase() + params.book.slice(1)}{" "}
           {params.chapter}
         </h1>

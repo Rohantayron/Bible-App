@@ -1,23 +1,35 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { ReactNode } from "react";
 import { FULLBIBLE } from "../BibleArray";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 function PageButtons() {
   const params = useParams<{ book: string; chapter: string }>();
   const router = useRouter();
 
   //code for decreasing
-  function buttonDecrement() {
+  function ButtonDecrementLink({ children }: { children: ReactNode }) {
     if (parseInt(params.chapter) <= 1) {
-      return;
+      return (
+        <Link
+          className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
+          href={``}
+        >
+          {children}
+        </Link>
+      );
     }
 
-    router.replace(
-      // parseInt turns string to interger
-      // add a limiter here
-      `/bible/read/${params.book}/${parseInt(params.chapter) - 1}`
+    return (
+      <Link
+        className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
+        href={`/bible/read/${params.book}/${parseInt(params.chapter) - 1}`}
+      >
+        {children}
+      </Link>
     );
   }
 
@@ -26,34 +38,39 @@ function PageButtons() {
   }
 
   //code for increasing
-  function buttonIncrement() {
+  function ButtonIncrementLink({ children }: { children: ReactNode }) {
     if (
       parseInt(params.chapter) === getBookFromStaticArray()?.chapters.length
     ) {
-      return;
+      return (
+        <Link
+          className=" p-6 rounded-full   right-32 top-1/4 absolute border text-xl"
+          href={``}
+        >
+          {children}
+        </Link>
+      );
     }
-    
-    router.replace(
-      `/bible/read/${params.book}/${parseInt(params.chapter) + 1}`
+
+    return (
+      <Link
+        className=" p-6 rounded-full   right-32 top-1/4 absolute border text-xl"
+        href={`/bible/read/${params.book}/${parseInt(params.chapter) + 1}`}
+      >
+        {children}
+      </Link>
     );
   }
 
   return (
     <>
-      <button
-        onClick={buttonDecrement}
-        className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
-      >
-        {" "}
+      <ButtonDecrementLink>
         <ChevronLeft />
-      </button>
-      <button
-        onClick={buttonIncrement}
-        className=" p-6 rounded-full   right-32 top-1/4 absolute border text-xl"
-      >
+      </ButtonDecrementLink>
+      <ButtonIncrementLink>
         {" "}
         <ChevronRight />
-      </button>
+      </ButtonIncrementLink>
     </>
   );
 }

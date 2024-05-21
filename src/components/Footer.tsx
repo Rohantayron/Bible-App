@@ -25,26 +25,25 @@ function Footer() {
                 href={"/home"}
                 className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
               >
-                Home
+                Contact us
               </Link>
               <Link
                 href={"/bible/read/genesis/1"}
                 className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
               >
-                Read Genesis
+                Donate{" "}
               </Link>
-              <Link
+              {/* <Link
                 href={"/bible/read/john/1"}
                 className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
               >
-                Read a gospel
+
               </Link>
               <Link
                 href={"/bible/read/psalms/1"}
                 className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
               >
-                Read a psalm
-              </Link>
+              </Link> */}
             </div>
             <hr className="border-gray-600" />
             <p className="w-full text-center my-12 text-muted-foreground">
