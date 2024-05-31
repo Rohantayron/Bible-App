@@ -8,70 +8,40 @@ import Link from "next/link";
 
 function PageButtons() {
   const params = useParams<{ book: string; chapter: string }>();
-
-  //code for decreasing
-  function ButtonDecrementLink({ children }: { children: ReactNode }) {
-    if (parseInt(params.chapter) <= 1) {
-      return (
-        <Link
-          className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
-          href={``}
-        >
-          {children}
-        </Link>
-      );
-    }
-
-    return (
-      <Link
-        className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
-        href={`/bible/read/${params.book}/${parseInt(params.chapter) - 1}`}
-      >
-        {children}
-      </Link>
-    );
-  }
-
+  const chapter = parseInt(params.chapter);
   function getBookFromStaticArray() {
     return FULLBIBLE.find((obj) => obj.name.toLowerCase() === params.book);
   }
 
-  //code for increasing
-  function ButtonIncrementLink({ children }: { children: ReactNode }) {
-    if (
-      parseInt(params.chapter) === getBookFromStaticArray()?.chapters.length
-    ) {
-      return (
+  return (
+    <div className="w-[90vw] flex sticky bottom-[35%] z-10 justify-between max-w-[1400px]  mx-auto">
+      {chapter ? (
+        <Link
+          className=" p-6 rounded-full   left-32 top-1/4 absolute border text-xl"
+          href={
+            parseInt(params.chapter) <= 1
+              ? ""
+              : `/bible/read/${params.book}/${parseInt(params.chapter) - 1}`
+          }
+        >
+          <ChevronLeft />
+        </Link>
+      ) : null}
+
+      {chapter ? (
         <Link
           className=" p-6 rounded-full   right-32 top-1/4 absolute border text-xl"
-          href={``}
+          href={
+            parseInt(params.chapter) ===
+            getBookFromStaticArray()?.chapters.length
+              ? ""
+              : `/bible/read/${params.book}/${parseInt(params.chapter) + 1}`
+          }
         >
-          {children}
+          <ChevronRight />
         </Link>
-      );
-    }
-
-    return (
-      <Link
-        className=" p-6 rounded-full   right-32 top-1/4 absolute border text-xl"
-        href={`/bible/read/${params.book}/${parseInt(params.chapter) + 1}`}
-      >
-        {children}
-      </Link>
-    );
-  }
-
-  return (
-    <>
-      <ButtonDecrementLink>
-        <ChevronLeft />
-      </ButtonDecrementLink>
-
-      <ButtonIncrementLink>
-        {" "}
-        <ChevronRight />
-      </ButtonIncrementLink>
-    </>
+      ) : null}
+    </div>
   );
 }
 

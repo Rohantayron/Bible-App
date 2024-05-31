@@ -38,9 +38,7 @@ export default async function page({
           </Suspense>
         </div>
       </div>
-      <div className="w-[90vw] flex sticky bottom-[35%] z-1 justify-between max-w-[1400px]  mx-auto">
-        <PageButtons />
-      </div>
+      <PageButtons />
     </div>
   );
 }
