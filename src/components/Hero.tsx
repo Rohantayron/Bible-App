@@ -5,7 +5,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
-function Hero(props: { text: string; nmr: number }) {
+function Hero() {
   return (
     <div className="grid  place-items-center   relative  pt-16 pb-8 md:pt-12 md:pb-24">
       <Image
@@ -22,8 +22,11 @@ function Hero(props: { text: string; nmr: number }) {
           The definitive Bible app made for{" "}
           <span className="text-foreground-primary">Everyone.</span>
         </h1>
-        <p className="text-lg mt-4 text-slate-600 max-w-xl">"{props.text}"</p>
-        <div>-John 3:{props.nmr}</div>
+        <p className="text-lg mt-4 text-slate-600 max-w-xl">
+          "For God so loved the world, that he gave his only begotten Son, that
+          whosoever believeth on him should not perish, but have eternal life."
+        </p>
+        <div>-John 3:16</div>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <Link href={"/bible/read/genesis/1"}>
             <Button
