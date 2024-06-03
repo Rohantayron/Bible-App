@@ -28,16 +28,6 @@ function Hero() {
         </p>
         <div>-John 3:16</div>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <Link href={"/bible/read/genesis/1"}>
-            <Button
-              size="lg"
-              className="flex gap-1 items-center justify-center"
-            >
-              <ChevronRight />
-              Continue
-            </Button>
-          </Link>
-
           <Link
             href="https://github.com/rohantayron/bible-app"
             target="_blank"

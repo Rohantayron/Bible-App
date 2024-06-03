@@ -24,11 +24,11 @@ async function PageText({
   });
 
   const chaptertext = chapter.data.map(
-    (verseandtext: { text: string; verse: number }) => {
+    (verseandtext: { text: string; verseNmr: number }) => {
       return (
         <TextParag
           key={verseandtext.text}
-          nmr={verseandtext.verse}
+          nmr={verseandtext.verseNmr}
           text={verseandtext.text}
         />
       );

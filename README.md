@@ -5,5 +5,3 @@
 4. Understand nextjs routing
 5. clean up code
 6. Improve UI more
-   7.? Random verse on home page
-7. clean BIbleAray.ts

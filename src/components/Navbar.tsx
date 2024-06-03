@@ -18,19 +18,19 @@ function Navbar() {
         href={"/bible/read/genesis/1"}
         className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
       >
-        Read Genesis
+        Genesis
       </Link>
       <Link
         href={"/bible/read/john/1"}
         className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
       >
-        Read a gospel
+        Gospel
       </Link>
       <Link
         href={"/bible/read/psalms/1"}
         className="hidden md:block cursor-pointer text-muted-foreground hover:text-foreground uppercase"
       >
-        Read a psalm
+        Psalms
       </Link>
       <hr className="border-gray-600" />
       <Suspense fallback={<NavbarSearchFallback />}>

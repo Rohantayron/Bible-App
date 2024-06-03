@@ -21,6 +21,7 @@ export default async function page({
 }: {
   params: { chapter: number; book: string };
 }) {
+  // neccesarry for generate static params to work
   const { book, chapter } = params;
 
   return (
