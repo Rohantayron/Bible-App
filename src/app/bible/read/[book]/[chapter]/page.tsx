@@ -27,7 +27,7 @@ export default async function page({
     <div className="relative py-16">
       <BookSelect />
       <div className="flex flex-col justify-center  items-center">
-        <h1 className="text-3xl font-bold py-6 ">
+        <h1 className="text-3xl font-bold pb-6 ">
           {params.book.charAt(0).toUpperCase() + params.book.slice(1)}{" "}
           {params.chapter}
         </h1>
@@ -38,9 +38,7 @@ export default async function page({
           </Suspense>
         </div>
       </div>
-      <div className="w-[90vw] flex sticky bottom-[35%] z-1 justify-between max-w-[1400px]  mx-auto">
-        <PageButtons />
-      </div>
+      <PageButtons />
     </div>
   );
 }
